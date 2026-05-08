@@ -12,7 +12,6 @@ helper
 idna==3.4
 jinja2
 mediainfo
-motor
 mutagen==1.46.0
 pyaes==1.6.1
 pycryptodome==3.18.0
@@ -27,7 +26,6 @@ speedtest-cli
 telegraph==2.2.0
 tgcrypto
 telethon
-umongo==3.1.0
 urllib3==2.0.3
 websockets==11.0.3
 yt-dlp==2023.6.22
