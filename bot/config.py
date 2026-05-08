@@ -31,19 +31,13 @@ class Config(object):
 
     BOT_TOKEN = os.environ.get(
         "BOT_TOKEN",
-        "YOUR_BOT_TOKEN"
+        "8724093305:AAEQymahtqxrtWLk1gpHibRmU_1rdIrdkfo
     )
 
-    # MongoDB
-    DATABASE_NAME = os.environ.get(
-        "DATABASE_NAME",
-        "Cluster0"
-    )
+    # MongoDB Disabled
+    DATABASE_NAME = ""
 
-    DATABASE_URL = os.environ.get(
-        "DATABASE_URL",
-        "mongodb+srv://USERNAME:PASSWORD@cluster0.mongodb.net/?retryWrites=true&w=majority"
-    )
+    DATABASE_URL = ""
 
     # Owner
     OWNER_ID = int(
