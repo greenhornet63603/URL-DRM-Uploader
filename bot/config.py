@@ -17,24 +17,44 @@ def is_enabled(value, default):
 
 
 class Config(object):
+
     API_ID = int(os.environ.get("API_ID", 27400172))
-API_HASH = os.environ.get("API_HASH", "56d0a75c5f9a9de6beb5452aa63c2d36")
-BOT_TOKEN = os.environ.get("BOT_TOKEN", "8724093305:AAEQymahtqxrtWLk1gpHibRmU_1rdIrdkfo")
+    API_HASH = os.environ.get(
+        "API_HASH",
+        "56d0a75c5f9a9de6beb5452aa63c2d36"
+    )
 
-DATABASE_NAME = os.environ.get("DATABASE_NAME", "Cluster0")
+    BOT_TOKEN = os.environ.get(
+        "BOT_TOKEN",
+        "8724093305:AAEQymahtqxrtWLk1gpHibRmU_1rdIrdkfo"
+    )
 
-DATABASE_URL = os.environ.get(
-    "DATABASE_URL",
-    "mongodb+srv://greenhornet63603:CvnxnjzknPLxYOfo@cluster0.qif4g18.mongodb.net/?appName=Cluster0"
-)
+    DATABASE_NAME = os.environ.get(
+        "DATABASE_NAME",
+        "Cluster0"
+    )
 
-OWNER_ID = int(os.environ.get("OWNER_ID", 7540570087))
+    DATABASE_URL = os.environ.get(
+        "DATABASE_URL",
+        "mongodb+srv://greenhornet63603:CvnxnjzknPLxYOfo@cluster0.qif4g18.mongodb.net/?appName=Cluster0"
+    )
 
-LOG_CHANNEL = int(os.environ.get("LOG_CHANNEL", -1003910418287))
+    OWNER_ID = int(
+        os.environ.get("OWNER_ID", 7540570087)
+    )
 
-WEB_SERVER = is_enabled(os.environ.get("WEB_SERVER", "False"), False)
+    LOG_CHANNEL = int(
+        os.environ.get("LOG_CHANNEL", -1003910418287)
+    )
 
-THUMBNAILS = list(map(str, os.environ.get("THUMBNAILS", "").split()))
+    WEB_SERVER = is_enabled(
+        os.environ.get("WEB_SERVER", "False"),
+        False
+    )
+
+    THUMBNAILS = list(
+        map(str, os.environ.get("THUMBNAILS", "").split())
+    )
 
     # Constants
     CANCEL_DATA = {}
@@ -42,49 +62,66 @@ THUMBNAILS = list(map(str, os.environ.get("THUMBNAILS", "").split()))
 
 
 class Script(object):
+
     START_MESSAGE = (
         " {mention}\n\nSend any link or set of links in a txt file to download them."
     )
+
     DEV_MESSAGE = """👋 Hey there, I'm Caption Alex ❤️– your go-to Telegram bot developer!
 
 🤖 Love having bots that do the heavy lifting for you? That's my jam! I'm all about crafting super cool and custom Telegram bots that make your life a breeze.
 
-✨ **What I Do**
+✨ What I Do
 
-- **Bot Magic:** From automating tasks to interactive games, I create bots that do it all. Seriously, ask me anything!
-- **Tailored to You:** Your bot, your rules. I'll whip up a bot that's as unique as you are.
-- **Chill Vibes:** I keep your data super safe, so you can relax and enjoy the bot party.
-- **Always Improving:** Telegram evolves, and my bots grow with it. I'm here to keep things fresh and fab.
+- Bot Magic: From automating tasks to interactive games, I create bots that do it all.
+- Tailored to You: Your bot, your rules.
+- Chill Vibes: I keep your data super safe.
+- Always Improving: Telegram evolves, and my bots grow with it.
 
-Ready for your own bot buddy? Ping me on [Telegram](https://telegram.me/Alex_Aditya9) or check out me on [GitHub](https://github.com/The_real_xTaR). Wanna hire me? Find me on [Fiverr](https://www.fiverr.com/The_real_xTaR)!
+Ready for your own bot buddy?
+
+Telegram:
+https://telegram.me/Alex_Aditya9
+
+GitHub:
+https://github.com/The_real_xTaR
+
+Fiverr:
+https://www.fiverr.com/The_real_xTaR
 
 Let's bot up and have some fun! 🤘"""
-    HELP_MESSAGE = os.environ.get("HELP_MESSAGE", "Help message")
+
+    HELP_MESSAGE = os.environ.get(
+        "HELP_MESSAGE",
+        "Help message"
+    )
+
     PROGRESS_MESSAGE = """**╔════❰ Uploading ❱══❍
 ║╭━➣
 ║┣⪼  Progress:-  {percentage}%
-║┣ 
+║┣
 ║┣⪼ {progress}
 ║┣
 ║┣⪼《{finished} of {total}》
-║┣ 
+║┣
 ║┣⪼ Speed:- {speed}/s
-║┣ 
-║┣⪼ ETA:- {eta} 
+║┣
+║┣⪼ ETA:- {eta}
 ║╰━➣
 ╚════════════════❍**"""
+
     NEW_USER_MESSAGE = """#NewUser
 
 🆔 User ID: `{user_id}`
 👤 User: {mention}
 """
+
     DOWNLOADING = """📥 ᴅᴏᴡɴʟᴏᴀᴅɪɴɢ 📥 :- {start_index}/{end_index}
 
 📝 Name » {link_no}) » {name}
 
 Original Index: {orginal_start_index}/{orginal_end_index}
-
-[Caption Alex ❤️](https://t.me/Alex_Aditya9)"""
+"""
 
     DEFAULT_CAPTION = """[📁] File_ID : {file_index}
 
@@ -93,18 +130,16 @@ Original Index: {orginal_start_index}/{orginal_end_index}
 🗃 𝐒𝐢𝐳𝐞 : {file_size}
 
 📚 Bᴀᴛᴄʜ Nᴀᴍᴇ : {batch_name}
-
-Dᴏᴡɴʟᴏᴀᴅᴇᴅ Bʏ : [Caption Alex ❤️](https://t.me/Alex_Aditya9)"""
-
+"""
 
     CAPTION_CB = """**Set Caption
 
-➢ Available Variables 👇**
+➢ Available Variables 👇
 
 ┌🎴 𝐍𝐚𝐦𝐞 : `{file_name}`
 ├🗃 𝐒𝐢𝐳𝐞 : `{file_size}`
 ├⚙️ 𝐄𝐱𝐭𝐞𝐧𝐬𝐢𝐨𝐧 : `{file_extension}`
-├🧭 𝐃𝐮𝐫𝐚𝐭𝐢𝐨𝐧 : `{file_duration}`
+├🧭 𝐃𝐮𝐫𝐚𝐭𝐢ᴏ𝐧 : `{file_duration}`
 ├🖇 𝐋𝐢𝐧𝐤 : `{file_url}`
 ├🔢 𝐈𝐧𝐝𝐞𝐱 : `{file_index}`
 ├🗳 𝐁𝐚𝐭𝐜𝐡 𝐍𝐚𝐦𝐞 : `{batch_name}`
@@ -116,7 +151,7 @@ Dᴏᴡɴʟᴏᴀᴅᴇᴅ Bʏ : [Caption Alex ❤️](https://t.me/Alex_Aditya9
 
 ==============================
 
-➢ **Default:**
+➢ Default:
 `{default_caption}`
 
-➢ **Status:** {status}"""
+➢ Status: {status}"""
